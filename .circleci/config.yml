@@ -1,13 +1,10 @@
 version: 2.1
 orbs:
-  cypress: cypress-io/cypress@2.2.0
+  cypress: cypress-io/cypress@3
 workflows:
-  build:
+  use-my-orb:
     jobs:
-        - cypress/install
-        - cypress/run:
-             store_artifacts: true  
-             spec: cypress/e2e/TS1.cy.js
-        - cypress/run:
-             store_artifacts: true  
-             spec: cypress/e2e/TS2.cy.js
+      - cypress/run:
+          cypress-command: npx cypress run --parallel --record
+          parallelism: 2
+          start-command: npm run start
