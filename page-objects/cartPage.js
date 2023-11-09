@@ -1,4 +1,3 @@
-import { Product } from "./homePage";
 
 const productName = '.product-name'
 const removeItemButton = '.remove'
@@ -8,7 +7,7 @@ const goToPaymentButton = 'div[class="wc-proceed-to-checkout"]'
 class CartPage {
 
     checkVisibilityOfProductName(Polo){
-        cy.get(productName).contains(Polo.name).should('exist')
+        cy.get(productName).contains(Polo.Locator).should('exist')
     }
 
     removeProductFromCart(){
