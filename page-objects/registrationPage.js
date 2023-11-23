@@ -1,5 +1,4 @@
 
-
 const addressEmailField = '#reg_email'
 const registerButton = 'button[name="register"]'
 const myAccountRegister = 'nav[class="woocommerce-MyAccount-navigation"]'
@@ -19,4 +18,4 @@ class RegistrationPage {
     }
 }
 
-export default RegistrationPage
+export default RegistrationPage;

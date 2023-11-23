@@ -25,7 +25,7 @@ class AccountPage{
         cy.get(myAccountNavigation).should('be.visible')
     }
 
-    checkVisibilityOfErrorAfterWrongLogin() {
+    checkVisibilityOfErrorAfterWrongLogin(){
         cy.get(errorAfterWrongLogin).should('be.visible')
     }
 

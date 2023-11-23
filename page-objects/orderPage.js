@@ -37,8 +37,6 @@ class OrderPage{
         cy.get(orderNumber, { timeout: 5000 }).should('exist')
 
     }
-
-
 }
 
-export default OrderPage
+export default OrderPage;
