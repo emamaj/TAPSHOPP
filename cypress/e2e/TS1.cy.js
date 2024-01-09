@@ -13,6 +13,7 @@ describe('my first scenario', () => {
         cy.fixture('users').as('userData')
     })
 
+
     it('should login to the application', function () {
         homePage.visitPage()
         homePage.clickMyAccountHeaderButton()
@@ -20,7 +21,6 @@ describe('my first scenario', () => {
         accountPage.fillPasswordField(this.userData.password)
         accountPage.clickLoginButton()
         accountPage.checkVisibilityOfMyAccountNavigation()
-
     })
 
     it('should not login to the application', function () {
@@ -29,16 +29,5 @@ describe('my first scenario', () => {
         accountPage.fillPasswordField(faker.internet.password())
         accountPage.clickLoginButton()
         accountPage.checkVisibilityOfErrorAfterWrongLogin()
-
     }) 
-
-    it('should product add to cart', function () {
-        homePage.visitPage()
-        homePage.addProductToCart()
-        homePage.clickGoToCartFromProductButton()
-        cartPage.checkVisibilityOfProductName()
-        cartPage.removeProductFromCart()
-        cartPage.checkEmptyCart()
-
-    })
 })

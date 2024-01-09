@@ -18,7 +18,6 @@ describe('my first scenario', () => {
         cartPage.goToPayment()
         orderPage.fillAllRequiredFields()
         orderPage.clickOrderFinishButton()
-        orderPage.checkOrderFinished()
-        
+        orderPage.checkOrderFinished()    
     })
 })

@@ -9,6 +9,11 @@ describe('my first scenario', () => {
         homePage.visitPage()
         searchingPage.searchAvailableProduct()
         searchingPage.searchingProductShouldExist()
+    })
 
+    it('searching product is not exist', function() {
+        homePage.visitPage()
+        searchingPage.searchingUnavailableTerm()
+        searchingPage.searchingProductNotExist()
     })
 })

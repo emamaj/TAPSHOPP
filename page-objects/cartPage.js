@@ -7,7 +7,7 @@ const goToPaymentButton = 'div[class="wc-proceed-to-checkout"]'
 class CartPage {
 
     checkVisibilityOfProductName(Polo){
-        cy.get(productName).contains(Polo.Locator).should('exist')
+        cy.get(productName).contains(Polo.Name).should('exist')
     }
 
     removeProductFromCart(){
