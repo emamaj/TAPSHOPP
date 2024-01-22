@@ -30,4 +30,12 @@ describe('my first scenario', () => {
         accountPage.clickLoginButton()
         accountPage.checkVisibilityOfErrorAfterWrongLogin()
     }) 
+
+    it('user type proper email but wrong password', function() {
+        accountPage.visitPage()
+        accountPage.fillUsernameFieldWithEmail(this.userData.email)
+        accountPage.fillPasswordField(faker.internet.password())
+        accountPage.clickLoginButton()
+        accountPage.checkVisibilityOfErrorAfterWrongLogin()
+    })
 })
