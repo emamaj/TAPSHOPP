@@ -9,7 +9,7 @@ describe('my first scenario', () => {
     const accountPage = new AccountPage();
     const cartPage = new CartPage();
 
-    before(function () {
+    beforeEach(function () {
         cy.fixture('users').as('userData')
     })
 
@@ -23,7 +23,7 @@ describe('my first scenario', () => {
         accountPage.checkVisibilityOfMyAccountNavigation()
     })
 
-    it('should not login to the application', function () {
+    it('should not login to the application - wrong email and password', function () {
         accountPage.visitPage()
         accountPage.fillUsernameFieldWithEmail(faker.internet.email())
         accountPage.fillPasswordField(faker.internet.password())
@@ -33,8 +33,17 @@ describe('my first scenario', () => {
 
     it('user type proper email but wrong password', function() {
         accountPage.visitPage()
+        cy.wait(1000)
         accountPage.fillUsernameFieldWithEmail(this.userData.email)
         accountPage.fillPasswordField(faker.internet.password())
+        accountPage.clickLoginButton()
+        accountPage.checkVisibilityOfErrorAfterWrongLogin()
+    })
+
+    it('should not login to the application - empty email and empty password', function() {
+        accountPage.visitPage()
+        accountPage.fillUsernameFieldWithEmail("")
+        accountPage.fillPasswordField("")
         accountPage.clickLoginButton()
         accountPage.checkVisibilityOfErrorAfterWrongLogin()
     })

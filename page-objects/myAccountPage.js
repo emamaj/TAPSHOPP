@@ -5,16 +5,21 @@ const usernameEmailField = '#username'
 const userPasswordField = '#password'
 const loginButton = 'button[name="login"]'
 const myAccountNavigation = '.woocommerce-MyAccount-navigation-link'
-const errorAfterWrongLogin = 'ul[role="alert"]'
+const errorAfterWrongLogin = '.wc-block-components-notice-banner__content'
 
 class AccountPage{
 
     fillUsernameFieldWithEmail(email){
+       if (email) {
         cy.get(usernameEmailField).type(email)
+       } else cy.get(usernameEmailField).clear()
     }
 
     fillPasswordField(password){
-        cy.get(userPasswordField).type(password)
+        if (password) {
+         cy.get(userPasswordField).type(password)
+        
+        } else cy.get(userPasswordField).clear()
     }
 
     clickLoginButton(){
